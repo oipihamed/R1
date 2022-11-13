@@ -23,15 +23,12 @@ def test_table() -> List[Dict]:
     results = [{name: color} for (name, color) in cursor]
     cursor.close()
     connection.close()
-    json.dumps({'test_table': test_table()})
-    #return results
-test_table()
-    
+    return results
 
+    
 @app.route('/')
 def index() -> str:
-    test_table()
-        #return json.dumps({'test_table': test_table()})
+        return json.dumps({'test_table': test_table()})
         #return render_template("contenido.html")    
 @app.route('/layout', methods = ["GET", "POST"])
 def layout():
@@ -136,6 +133,8 @@ def registro():
 
 
 
-#if __name__ == '__main__':
+if __name__ == '__main__':
+   
+    print( json.dumps({'test_table': test_table()}))
    #test_table()    
     #app.run(host='0.0.0.0')
