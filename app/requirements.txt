@@ -1,7 +1,5 @@
 Flask==2.2.2
 Flask-Cors==3.0.10
-Flask-MySQLdb==1.0.1
-mysqlclient==2.1.1
 notify-py==0.3.3
 py==1.11.0
 pyparsing==3.0.9
