@@ -11,11 +11,11 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 def test_table() -> List[Dict]:
     config = {
-        'user': 'root',
-        'password': 'root',
-        'host': 'db',
+        'user': 'uynv2tnynvplpgon',
+        'password': '8rzJP0pyuiq1VkMLELfx',
+        'host': 'b0manp20m3mu8n6jdwgo-mysql.services.clever-cloud.com',
         'port': '3306',
-        'database': 'devopsroles'
+        'database': 'b0manp20m3mu8n6jdwgo'
     }
     connection = mysql.connector.connect(**config)
     cursor = connection.cursor()
