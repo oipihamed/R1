@@ -25,7 +25,8 @@ def test_table() -> List[Dict]:
     connection.close()
     json.dumps({'test_table': test_table()})
     #return results
-
+test_table()
+    
 
 @app.route('/')
 def index() -> str:
@@ -135,6 +136,6 @@ def registro():
 
 
 
-if __name__ == '__main__':
-    test_table()    
+#if __name__ == '__main__':
+   #test_table()    
     #app.run(host='0.0.0.0')
