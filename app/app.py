@@ -23,14 +23,14 @@ def test_table() -> List[Dict]:
     results = [{name: color} for (name, color) in cursor]
     cursor.close()
     connection.close()
-
-    return results
+    json.dumps({'test_table': test_table()})
+    #return results
 
 
 @app.route('/')
 def index() -> str:
-        print( json.dumps({'test_table': test_table()}))
-        return json.dumps({'test_table': test_table()})
+    test_table()
+        #return json.dumps({'test_table': test_table()})
         #return render_template("contenido.html")    
 @app.route('/layout', methods = ["GET", "POST"])
 def layout():
@@ -43,12 +43,12 @@ def login():
 
     if request.method == 'POST':
         config = {
-        'user': 'root',
-        'password': 'root',
-        'host': 'db',
+        'user': 'uynv2tnynvplpgon',
+        'password': '8rzJP0pyuiq1VkMLELfx',
+        'host': 'b0manp20m3mu8n6jdwgo-mysql.services.clever-cloud.com',
         'port': '3306',
-        'database': 'devopsroles'
-             }
+        'database': 'b0manp20m3mu8n6jdwgo'
+        }
         connection = mysql.connector.connect(**config)
 
         email = request.form['email']
@@ -88,12 +88,12 @@ def login():
 @app.route('/registro', methods = ["GET", "POST"])
 def registro():
     config = {
-        'user': 'root',
-        'password': 'root',
-        'host': 'db',
+        'user': 'uynv2tnynvplpgon',
+        'password': '8rzJP0pyuiq1VkMLELfx',
+        'host': 'b0manp20m3mu8n6jdwgo-mysql.services.clever-cloud.com',
         'port': '3306',
-        'database': 'devopsroles'
-             }
+        'database': 'b0manp20m3mu8n6jdwgo'
+         }
     connection = mysql.connector.connect(**config)
     cur = connection.cursor()
     cur.execute("SELECT * FROM tip_usu")
@@ -118,12 +118,12 @@ def registro():
         tip = request.form['tipo']
         interes = request.form['interes']  
         config = {
-        'user': 'root',
-        'password': 'root',
-        'host': 'db',
+        'user': 'uynv2tnynvplpgon',
+        'password': '8rzJP0pyuiq1VkMLELfx',
+        'host': 'b0manp20m3mu8n6jdwgo-mysql.services.clever-cloud.com',
         'port': '3306',
-        'database': 'devopsroles'
-             }
+        'database': 'b0manp20m3mu8n6jdwgo'
+         }
         connection = mysql.connector.connect(**config)
         cur = connection.cursor()
         cur.execute("INSERT INTO users (name, email, password, id_tip_usu, interes) VALUES (%s,%s,%s,%s,%s)", (name, email, password,tip,interes,))
@@ -135,5 +135,5 @@ def registro():
 
 
 
-#if __name__ == '__main__':
-   # app.run(host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
