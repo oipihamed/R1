@@ -29,6 +29,7 @@ def test_table() -> List[Dict]:
 
 @app.route('/')
 def index() -> str:
+        print( json.dumps({'test_table': test_table()}))
         return json.dumps({'test_table': test_table()})
         #return render_template("contenido.html")    
 @app.route('/layout', methods = ["GET", "POST"])
@@ -134,5 +135,5 @@ def registro():
 
 
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+#if __name__ == '__main__':
+   # app.run(host='0.0.0.0')
